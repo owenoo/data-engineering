@@ -1,0 +1,11 @@
+<%= form_for @item do |f| %>
+
+  <p>
+    <%= f.label :fileinfo %><br>
+    <%= f.file_field :fileinfo %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

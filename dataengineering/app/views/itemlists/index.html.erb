@@ -1,0 +1,33 @@
+<h1>Listing Items</h1>
+ 
+<table>
+  <tr>
+    <th>purchaser name</th>
+    <th>item description</th>
+    <th>item price</th>
+    <th>purchase count</th>
+    <th>merchant address</th>
+    <th>merchant name</th>
+  </tr>
+ 
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.purchaserName %></td>
+      <td><%= item.itemDesc %></td>
+      <td><%= item.itemPrice %></td>
+      <td><%= item.purchaseCount %></td>
+      <td><%= item.merchAddress %></td>
+      <td><%= item.merchName %></td>      
+      <td><%= link_to 'Show', item %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div>
+  <h2>Total: </h2>
+  <span><%= Itemlist.calcSum %></span>
+</div>
+<br />
+<div>
+<%= button_to "Upload another file", new_itemlist_path, :method => "get" %>
+</div>
