@@ -1,31 +1,32 @@
+<h2>Selected Order Details: </h2>
 <p>
   <strong>purchaser name:</strong>
-  <%= @order.purchaser_id %>
+  <%= @order_hash[0]["purchaser name"] %>
 </p>
  
 <p>
   <strong>item description:</strong>
-  <%= @order.item_id %>
+  <%= @order_hash[0]["item description"] %>
 </p>
 
 <p>
   <strong>item price:</strong>
-  <%= @order.item_id %>
+  <%= @order_hash[0]["item price"] %>
 </p>
 
 <p>
   <strong>purchase count:</strong>
-  <%= @order.purchase_count %>
+  <%= @order_hash[0]["purchase count"] %>
 </p>
 
 <p>
   <strong>merchant address:</strong>
-  <%= @order.merchant_id %>
+  <%= @order_hash[0]["merchant address"] %>
 </p>
 
 <p>
   <strong>merchant name:</strong>
-  <%= @order.merchant_id %>
+  <%= @order_hash[0]["merchant name"] %>
 </p>
 
 

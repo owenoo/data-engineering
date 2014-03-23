@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140310041849) do
+ActiveRecord::Schema.define(version: 20140321184521) do
 
   create_table "itemlists", force: true do |t|
     t.string   "purchaserName"
@@ -20,6 +20,36 @@ ActiveRecord::Schema.define(version: 20140310041849) do
     t.integer  "purchaseCount"
     t.string   "merchAddress"
     t.string   "merchName"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "description"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "merchant_id"
+  end
+
+  create_table "merchants", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "purchase_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "purchaser_id"
+    t.integer  "merchant_id"
+    t.integer  "item_id"
+  end
+
+  create_table "purchasers", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

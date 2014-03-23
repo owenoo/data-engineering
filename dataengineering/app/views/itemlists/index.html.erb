@@ -10,22 +10,22 @@
     <th>merchant name</th>
   </tr>
  
-  <% @items.each do |item| %>
+  <% @order_hash.each do |order| %>
     <tr>
-      <td><%= item.purchaserName %></td>
-      <td><%= item.itemDesc %></td>
-      <td><%= item.itemPrice %></td>
-      <td><%= item.purchaseCount %></td>
-      <td><%= item.merchAddress %></td>
-      <td><%= item.merchName %></td>      
-      <td><%= link_to 'Show', item %></td>
+      <td><%= order["purchaser name"] %></td>
+      <td><%= order["item description"] %></td>
+      <td><%= order["item price"] %></td>
+      <td><%= order["purchase count"] %></td>
+      <td><%= order["merchant address"] %></td>
+      <td><%= order["merchant name"] %></td>            
+      <td><%= link_to 'Show', order_path(order["id"]) %></td>
     </tr>
   <% end %>
 </table>
 
 <div>
   <h2>Total: </h2>
-  <span><%= Itemlist.calcSum %></span>
+  <span><%= Order.calc_sum %></span>
 </div>
 <br />
 <div>
